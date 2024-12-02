@@ -67,24 +67,24 @@ body {
     margin-top: 7px;
     margin-bottom: 6px;
 }
-.i1{
+.inten{
     font-size: 20px;
     font-style: oblique;
     font-weight: bold;
 }
-.r1{
+.resistance{
     font-size: 20px;
     font-style: oblique;
     font-weight: bold;
 }
-#i1{
+#inten{
     border-radius: 8px;
     margin-left: 30px;
     text-align: center;
 
 
 }
-#r1{
+#resistance{
     border-radius: 8px;
     margin-right: 10px;
     margin-top: 20px;
@@ -109,7 +109,7 @@ h1 {
     color:white;
     padding-top: 15px;
 }
-#c1{
+#cal{
     cursor: pointer;
     border: none;
     border-radius: 5px;
@@ -134,17 +134,17 @@ h1 {
         
         <form method="POST">
             {% csrf_token %}
-            <div class="i1">
-                Intensity: <input type="text" name="intensity" value="{{i}}" id="i1"> Amperes (A)<br/>
+            <div class="inten">
+                Intensity: <input type="text" name="intensity" value="{{i}}" id="inten"> Amperes (A)<br/>
             </div>
-            <div class="r1">
-                Resistance: <input type="text" id="r1" name="resistance" value="{{r}}"> Ohm (Ω)<br/>
+            <div class="resistance">
+                Resistance: <input type="text" id="resistance" name="resistance" value="{{r}}"> Ohm (Ω)<br/>
             </div>
             <div class="formelt">
                 Power: <input type="text" id="formlet" name="power" value="{{power}}"> In Watts<br/>
             </div>
-            <div class="c1">
-                <input type="submit" id="c1"><br/>
+            <div class="cal">
+                <input type="submit" id="cal"><br/>
             </div>
         </form>
     </div>
