@@ -36,7 +36,6 @@ Publish the website in the given URL.
 
 math.html
 
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -135,10 +134,10 @@ h1 {
         <form method="POST">
             {% csrf_token %}
             <div class="inten">
-                Intensity: <input type="text" name="intensity" value="{{i}}" id="inten"> Amperes (A)<br/>
+                Intensity: <input type="text" name="intensity" value="{{I}}" id="inten"> Amperes (A)<br/>
             </div>
             <div class="resistance">
-                Resistance: <input type="text" id="resistance" name="resistance" value="{{r}}"> Ohm (Ω)<br/>
+                Resistance: <input type="text" id="resistance" name="resistance" value="{{R}}"> Ohm (Ω)<br/>
             </div>
             <div class="formelt">
                 Power: <input type="text" id="formlet" name="power" value="{{power}}"> In Watts<br/>
@@ -152,7 +151,7 @@ h1 {
 </body>
 </html>
 
-view.py
+views.py
 
 from django.shortcuts import render 
 def power(request): 
@@ -167,13 +166,12 @@ def power(request):
         print('request=',request) 
         print('resistance=',R) 
         print('intensity=',I) 
-        power = int(R) * int(I) 
+        power = int(R) *int(I)* int(I) 
         context['power'] = power
         context['R'] = R
         context['I'] = I
         print('Power=',power) 
     return render(request,'mathapp/math.html',context)
-
 
 urls.py
 
@@ -188,13 +186,16 @@ urlpatterns = [
 
 
 
+
 ```
 
 ## SERVER SIDE PROCESSING:
-![alt text](<Screenshot (26).png>)
+
+![alt text](<Screenshot (27).png>)
 
 ## HOMEPAGE:
-![alt text](<Screenshot (25).png>)
+
+![alt text](<Screenshot (28).png>)
 
 ## RESULT:
 The program for performing server side processing is completed successfully.

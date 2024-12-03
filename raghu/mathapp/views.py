@@ -11,7 +11,7 @@ def power(request):
         print('request=',request) 
         print('resistance=',R) 
         print('intensity=',I) 
-        power = int(R) * int(I) 
+        power = int(R) *int(I)* int(I) 
         context['power'] = power
         context['R'] = R
         context['I'] = I
